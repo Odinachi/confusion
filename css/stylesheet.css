@@ -11,7 +11,7 @@
 .footer{
     background-color: #D1C4E3;
     margin: 0px auto;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0px 20px 2px;
 }
 .jumbotron{
     padding: 70px 30px 70px 30px;
@@ -37,4 +37,16 @@ body{
 
 .navbar-dark {
      background-color: #512DA8;
+}
+.col-3{
+    padding: 2px;
+}
+.col-9{
+    padding: 2px;
+}
+.reserve{
+    padding: 2px;
+}
+.carding{
+    padding: 2px;
 }
