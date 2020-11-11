@@ -86,15 +86,80 @@
                 </div>
 
                 <div class="col-12 col-sm align-self-center">
-                    <!-- <a href="#reservecard" class="btn btn-block" style="margin-top: 5px;"><button type="button" class="btn btn-warning" ><strong>Reserve Table</strong></button></a> -->
-                    <a role="button" class="btn btn-block nav-link btn-warning"
+                    <!-- <a href="#reservecard" class="btn btn-block" style="margin-top: 5px;"><button type="button" class="btn btn-warning" ><strong>Reserve Table</strong></button></a>-->
+
+                    <!-- <a role="button" class="btn btn-block nav-link btn-warning"
                     data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                    data-placement="bottom" href="#reserveform">Reserve Table</a>                    
+                    data-placement="bottom" href="#reserveform">Reserve Table</a>
+                     -->
+
+                    <a data-toggle="modal" data-target="#reserveModal">
+                        <button type="button" class="btn btn-warning btn-block" ><strong>Reserve Table</strong></button></a>
                 </div>
 
             </div>
         </div>
     </header>
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a table </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <dt class="col-3">Number of Guest</dt>
+                            <dd class="col-9">
+                                <input type="radio" id="1" name="numberofguest" value="male">
+                                <label for="1"><strong>1</strong></label>
+                                <input type="radio" id="2" name="numberofguest" value="female">
+                                <label for="2"><strong>2</strong></label>
+                                <input type="radio" id="3" name="numberofguest" value="other">
+                                <label for="3"><strong>3</strong></label>
+                                <input type="radio" id="4" name="numberofguest" value="other">
+                                <label for="4"><strong>4</strong></label>
+                                <input type="radio" id="5" name="numberofguest" value="other">
+                                <label for="5"><strong>5</strong></label>
+                                <input type="radio" id="6" name="numberofguest" value="other">
+                                <label for="6"><strong>6</strong></label>
+                            </dd>
+                            <br>
+                            <br>
+                            <dt class="col-3">
+                                <p>Section</p>
+                            </dt>
+                            <dd class="col-9 ">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                      <input type="radio" name="options" id="non-smoking" autocomplete="off" checked> Non-Smoking
+                                    </label>
+                                    <label class="btn btn-danger">
+                                      <input type="radio" name="options" id="smoking" autocomplete="off"> Smoking
+                                    </label>
+                                  </div>  
+                            </dd>
+                            <dt class="col-3">
+                                <p>Date and Time</p>
+                            </dt>
+                            <dd class="col-9 ">
+                                <input type="date" id="start" name="numberofguest" value="2018-07-22" min="1998-01-01" max="2030-12-31" required>
+                                <input type="time" id="appt" name="numberofguest" min="00:00" max="24:00" required>
+                            </dd>
+                            <dt class="col-3">
+
+                            </dt>
+                            <dd class="col-9">
+                                <button class="btn btn-secondary " for="numberofguest" type="submit">Cancel</button>
+                                <button class="btn btn-primary" for="numberofguest" type="submit">Reserve</button>
+                            </dd>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
 
@@ -196,7 +261,7 @@
         </div>
     </div>
 
-    <div class="container" id="reservecard">
+    <!-- <div class="container" id="reservecard">
         <div class="row row-content align-itens-center">
             <div class="col-12 col-sm-12 order-sm-last col-md-8 align-item-center">
     
@@ -235,7 +300,7 @@
             </div>
         </div>
         
-    </div>
+    </div> -->
             
 
 
@@ -289,11 +354,11 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
         });
-    </script>
+    </script> -->
     
     
 
