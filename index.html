@@ -41,11 +41,11 @@
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header navbar-dark">
                     <h4 class="modal-title">Login </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body loginreserve">
                     <form>
                         <div class="form-row">
                             <div class="form-group col-sm-4">
@@ -103,11 +103,11 @@
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header navbar-dark">
                     <h4 class="modal-title">Reserve a table </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body loginreserve">
                     <form>
                         <div class="row">
                             <dt class="col-3">Number of Guest</dt>
@@ -134,7 +134,7 @@
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-success active">
                                       <input type="radio" name="options" id="non-smoking" autocomplete="off" checked> Non-Smoking
-                                    </label>s
+                                    </label>
                                     <label class="btn btn-danger">
                                       <input type="radio" name="options" id="smoking" autocomplete="off"> Smoking
                                     </label>
@@ -205,14 +205,20 @@
                         <span class="carousel-control-next-icon"></span>
                     </a>
 
-                    <div class="btn-group" id="carouselButton">
+                    <!-- caurosel play and pause button -->
+                    
+                    <!-- <div class="btn-group" id="carouselButton">
                         <button class="btn btn-danger btn-sm" id="carousel-pause">
                             <span class="fa fa-pause"></span>
                         </button>
                         <button class="btn btn-danger btn-sm" id="carousel-play">
                             <span class="fa fa-play"></span>
                         </button>
-                    </div>
+                    </div> -->
+
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carousel-button-icon" class="fa fa-pause"></span>
+                    </button>
        
 
                 </div>
@@ -366,6 +372,50 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+        $("#carouselButton").click(function(){
+            if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                $("#mycarousel").carousel('pause');
+                $("#carouselButton").children("span").removeClass('fa-pause');
+                $("#carouselButton").children("span").addClass('fa-play');
+            }
+            else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                $("#mycarousel").carousel('cycle');
+                $("#carouselButton").children("span").removeClass('fa-play');
+                $("#carouselButton").children("span").addClass('fa-pause');                    
+            }
+        });
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+// When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+// When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            }
+        }
+    </script>
+    
+    <!-- caurosel play and pause button -->
+    
+    <!-- <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
             $("#carousel-pause").click(function(){
@@ -375,7 +425,7 @@
                 $("#mycarousel").carousel('cycle');
             });
         });
-    </script>
+    </script> -->
 
     <!-- <script>
         $(document).ready(function(){

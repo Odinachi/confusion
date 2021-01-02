@@ -80,3 +80,7 @@ body{
     bottom: 0px;
     z-index: 1;
 }
+
+.loginreserve{
+    background: #9575cd;
+}
